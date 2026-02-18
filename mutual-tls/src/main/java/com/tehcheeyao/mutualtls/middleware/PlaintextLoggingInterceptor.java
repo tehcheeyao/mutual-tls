@@ -14,8 +14,7 @@ public class PlaintextLoggingInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
-        // Since there is no TLS, this data is exactly what is moving across the wire
-        logger.info("--- Incoming Unsecured Request ---");
+        logger.info("--- Incoming secured Request ---");
         logger.info("Method: {}", request.getMethod());
         logger.info("URL: {}", request.getRequestURL());
         logger.info("Source IP: {}", request.getRemoteAddr());
